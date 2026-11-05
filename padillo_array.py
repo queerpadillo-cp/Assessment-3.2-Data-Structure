@@ -4,18 +4,24 @@
 
 def array_algorithm():
     print("==================================================")
-    print("       ARRAY DATA STRUCTURE ALGORITHM: PADILLO    ")
+    print("       ARRAY DATA STRUCTURE ALGORITHM             ")
     print("==================================================\n")
 
+    # Dynamic input
+    name = input("Enter a name/word (Press Enter for 'PADILLO'): ").strip()
+    if not name:
+        name = "PADILLO"
+
+    clean_name = "".join(name.split())
+    size = len(clean_name)
+
     # 1. Insertion Phase
-    print("=== 1. Insertion Phase (Adding Letters) ===")
-    size = 7
+    print(f"\n=== 1. Insertion Phase (Adding Letters for '{name.upper()}') ===")
     arr = [None] * size
-    word = "PADILLO"
 
     print(f"Initialized an empty array of size {size}.")
-    for i in range(len(word)):
-        arr[i] = word[i]
+    for i in range(size):
+        arr[i] = clean_name[i].upper()
         print(f"  - arr[{i}] = '{arr[i]}'")
     print(f"\nResult: {arr}\n")
 
