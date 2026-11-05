@@ -4,16 +4,22 @@
 
 def stack_algorithm():
     print("==================================================")
-    print("       STACK DATA STRUCTURE ALGORITHM: PADILLO    ")
+    print("       STACK DATA STRUCTURE ALGORITHM             ")
     print("==================================================\n")
 
+    # Dynamic input
+    name = input("Enter a name/word (Press Enter for 'PADILLO'): ").strip()
+    if not name:
+        name = "PADILLO"
+
+    clean_name = "".join(name.split()).upper()
+
     # 1. Insertion Phase (Push Operation)
-    print("=== 1. Insertion Phase (Push Operation) ===")
+    print(f"\n=== 1. Insertion Phase (Push Operation for '{name}') ===")
     stack = []
-    word = "PADILLO"
 
     print("Initialized an empty stack.")
-    for char in word:
+    for char in clean_name:
         stack.append(char)
         print(f"  - Push '{char}' -> Stack: {stack}")
     print()

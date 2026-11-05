@@ -1,6 +1,6 @@
 # Name: Queer S. Padillo
 # Section: BSIT-2A
-# Assessment 3.2: Linked List Data Structure Program
+# Assessment 3.2: Singly Linked List Program
 
 class Node:
     def __init__(self, data):
@@ -8,7 +8,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
@@ -40,29 +40,32 @@ class LinkedList:
         return removed_data
 
 
-def linked_list_algorithm():
+def singly_linked_list_algorithm():
     print("==================================================")
-    print("    LINKED LIST DATA STRUCTURE ALGORITHM: PADILLO ")
+    print("   SINGLY LINKED LIST ALGORITHM                   ")
     print("==================================================\n")
 
-    ll = LinkedList()
-    word = "PADILLO"
+    # Dynamic input
+    name = input("Enter a name/word (Press Enter for 'PADILLO'): ").strip()
+    if not name:
+        name = "PADILLO"
 
-    # 1. Insertion Phase
-    print("=== 1. Insertion Phase (Append/Insert at Tail) ===")
-    print("Initialized an empty Linked List (Head = None).")
-    for char in word:
+    clean_name = "".join(name.split()).upper()
+    ll = SinglyLinkedList()
+
+    print(f"\n=== 1. Insertion Phase (Append/Insert at Tail for '{name}') ===")
+    print("Initialized an empty Singly Linked List (Head = None).")
+    for char in clean_name:
         ll.append(char)
         print(f"  - Insert '{char}' -> List: {ll.display()}")
     print()
 
-    # 2. Deletion Phase
     print("=== 2. Deletion Phase (Delete from Head until Empty) ===")
     while ll.head is not None:
         removed = ll.delete_head()
         print(f"  - Delete head ('{removed}') -> List: {ll.display()}")
-    print("\nLinked List is now completely empty!")
+    print("\nSingly Linked List is now completely empty!")
 
 
 if __name__ == "__main__":
-    linked_list_algorithm()
+    singly_linked_list_algorithm()
